@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Art</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 10px;
+            font-weight: bold;
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header nav ul li {
+            margin-left: 20px;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        header nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        #home {
+            background-image: url(css.png); 
+            background-size: repeat;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: relative;
+        }
+        #home .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 50px;
+            text-align: center;
+            width: 60%;
+            max-width: 400px;
+        }
+        #home h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        #home p {
+            font-size: 20px;
+        }
+        #categories {
+            background-color: #d2a15e;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        #categories h2 {
+            font-size: 30px;
+            margin-bottom: 50px;
+            color: #000;
+        }
+        #categories .category-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        #categories .category-box {
+            width: 15%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        #categories .category-box img {
+            width: 150px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+        #categories .category-box p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+        #featured-artists {
+            padding: 60px 20px;
+            background-color: #e0c1a8;
+            text-align: center;
+        }
+        #featured-artists h2 {
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        #featured-artists .artist-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        #featured-artists .artist-box {
+            width: 20%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        #featured-artists .artist-box img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        #featured-artists .artist-box h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        #featured-artists .artist-box p {
+            font-size: 14px;
+            color: #44423f;
+        }
+        #testimonials {
+            background-color: #daa160c8;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        #testimonials h2 {
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+        #testimonials .testimonial-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        #testimonials .testimonial-box {
+            width: 30%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        #testimonials .testimonial-box p {
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        #testimonials .testimonial-box h4 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #about {
+            background-color: #f9e7b5;
+            padding: 40px 10px;
+            text-align: center;
+        }
+        #about p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #contact {
+            background-color: #dab76bd4;
+            padding: 30px 15px;
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        #contact form {
+            display: inline-block;
+            max-width: 400px;
+            width: 100%;
+        }
+        #contact form input, #contact form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        #contact form button {
+            padding: 15px 30px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #contact form button:hover {
+            background-color: #555;
+        }
+        #formMessage {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ART</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#featured-artists">Featured Artists</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <div class="overlay">
+            <h2>Welcome to Art</h2>
+            <p>Explore beautiful art work around the world</p>
+        </div>
+    </section>
+    <section id="categories">
+        <h2>Categories</h2>
+        <div class="category-container">
+            <div class="category-box">
+                <img src="art1.png" alt="Painting">
+                <p>Painting</p>
+            </div>
+            <div class="category-box">
+                <img src="art2.png" alt="Drawings">
+                <p>Drawings</p>
+            </div>
+            <div class="category-box">
+                <img src="art3.png" alt="Handcrafts">
+                <p>Handcrafts</p>
+            </div>
+            <div class="category-box">
+                <img src="art4.png" alt="Sculptures">
+                <p>Sculptures</p>
+            </div>
+            <div class="category-box">
+                <img src="art5.png" alt="Photography">
+                <p>Photography</p>
+            </div>
+            <div class="category-box">
+                <img src="art6.png" alt="Printmaking">
+                <p>Printmaking</p>
+            </div>
+        </div>
+    </section>
+    <section id="featured-artists">
+        <h2>Featured Artists</h2>
+        <div class="artist-container">
+            <div class="artist-box">
+                <img src="artist1.png" alt="Artist 1">
+                <h4>Jane Doe</h4>
+                <p>Contemporary Painter</p>
+            </div>
+            <div class="artist-box">
+                <img src="artist2.png" alt="Artist 2">
+                <h4>John Smith</h4>
+                <p>Sculptor</p>
+            </div>
+            <div class="artist-box">
+                <img src="artist3.png" alt="Artist 3">
+                <h4>Kaira</h4>
+                <p>Handcrafter</p>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials">
+        <h2>What Our Visitors Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-box">
+                <p>"The artwork here is stunning and the variety is impressive!"</p>
+                <h4>Maria Jackson</h4>
+            </div>
+            <div class="testimonial-box">
+                <p>"I found an amazing piece for my living room, and the artists are so talented!"</p>
+                <h4>David Williams</h4>
+            </div>
+            <div class="testimonial-box">
+                <p>"This is my favorite place to explore new artists and their work."</p>
+                <h4>Laura Thompson</h4>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Our mission is to connect artists with art enthusiasts from all over the world
+            . We aim to showcase beautiful artwork and help artists grow their audience.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="formMessage"></p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Art Gallery. All rights reserved.</p>
+    </footer>
+    <script>
+        function validateForm() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let message = document.getElementById('message').value;
+            let formMessage = document.getElementById('formMessage');
+
+            if (name === '' || email === '' || message === '') {
+                formMessage.textContent = 'Please fill in all fields.';
+                formMessage.style.color = 'red';
+                return false;
+            } else {
+                formMessage.textContent = 'Thank you for your message!';
+                formMessage.style.color = 'green';
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
